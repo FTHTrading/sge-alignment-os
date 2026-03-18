@@ -38,6 +38,14 @@ jobs:
       - name: Generate Prisma Client
         run: cd packages/db && npx prisma generate
 
+      - name: Remove dynamic API routes (incompatible with static export)
+        run: |
+          rm -rf apps/web/src/app/api/auth
+          rm -rf apps/web/src/app/api/governance/\[id\]
+          rm -rf apps/web/src/app/api/milestones/\[id\]
+          rm -rf apps/web/src/app/api/partners/\[id\]
+          rm -rf apps/web/src/app/api/projects/\[id\]
+
       - name: Build static site
         env:
           GITHUB_PAGES: "true"
