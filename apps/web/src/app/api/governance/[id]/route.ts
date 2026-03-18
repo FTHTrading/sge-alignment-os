@@ -2,6 +2,10 @@ import { NextRequest } from "next/server";
 import { prisma } from "@sge/db";
 import { ok, notFound, serverError } from "../../_helpers";
 
+export function generateStaticParams() {
+  return [];
+}
+
 export async function GET(
   _req: NextRequest,
   { params }: { params: { id: string } }
