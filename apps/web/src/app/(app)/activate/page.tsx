@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import NextLink from "next/link";
 import {
   Wallet,
   ArrowRight,
@@ -646,12 +647,12 @@ export default function FoundationActivationPage() {
 
           {/* Action buttons */}
           <div className="flex gap-3">
-            <Link
+            <NextLink
               href="/activation-dashboard"
               className="flex-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 px-6 py-3 text-sm font-medium text-emerald-400 hover:bg-emerald-500/20 transition text-center"
             >
               View Dashboard
-            </Link>
+            </NextLink>
             <button
               onClick={handleReset}
               className="flex-1 rounded-lg bg-white/5 border border-white/[0.06] px-6 py-3 text-sm font-medium text-white/60 hover:text-white hover:bg-white/10 transition"
